@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+
+    ports:
+      - 8000:8000
+#    depends_on:
+#      - db
+    environment:
+      - "DJANGO_SECRET_KEY=django-insecure-_-4sm^2^=abgv(p3=_v)an_xn5!=^byx%1b7d8zrd1)50mt7yb"
+      - "DJANGO_DEBUG=True"
