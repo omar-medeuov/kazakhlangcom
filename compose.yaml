@@ -9,3 +9,21 @@ services:
     environment:
       - "DJANGO_SECRET_KEY=django-insecure-_-4sm^2^=abgv(p3=_v)an_xn5!=^byx%1b7d8zrd1)50mt7yb"
       - "DJANGO_DEBUG=True"
+      - "POSTGRES_DB_NAME = postgres"
+      - "POSTGRES_USER = postgres"
+      - "POSTGRES_PASSWORD = postgres"
+      - "POSTGRES_HOST = db"
+      - "POSTGRES_PORT = 5432"
+
+  db:
+    image: postgres:17
+    environment:
+      - "POSTGRES_DB_NAME = postgres"
+      - "POSTGRES_USER = postgres"
+      - "POSTGRES_PASSWORD = postgres"
+
+    volumes:
+      - "postgres_data:/var/lib/postgresql/data"
+
+volumes:
+  postgres_data:
