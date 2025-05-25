@@ -30,7 +30,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG", default=False)
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"]
 
 
 # Application definition
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'kazakhlangcom.wsgi.application'
 DATABASES = {
     'default':
         {
-            'ENGINE': 'django.db.backends.postgres',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': env("POSTGRES_DB_NAME", "postgres"),
             'USER': env("POSTGRES_USER", "postgres"),
             'PASSWORD': env("POSTGRES_PASSWORD", "postgres"),
