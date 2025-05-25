@@ -5,6 +5,10 @@
     <title>Article</title>
 </head>
 <body>
-    This is an article titled {{ article.title }}
+    <h2>This is an article titled {{ article.title }}</h2>
+
+    <div>
+        {{ markdown_content | safe}}
+    </div>
 </body>
 </html>
