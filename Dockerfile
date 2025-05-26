@@ -7,7 +7,7 @@ ENV PIP_DISABLE_PIP_VERSION_CHECK 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
 
-WORKDIR /kazakhlang
+WORKDIR /kazakhlangcom
 
 
 #Install dependencies
@@ -22,6 +22,7 @@ COPY . .
 #RUN python3 ./manage.py migrate
 
 #shouldnt be running it during build, build would never end! you wont receive your image
-CMD python3 ./manage.py runserver 0.0.0.0:8000
+#CMD python3 ./manage.py runserver 0.0.0.0:8000
 
+#CMD gunicorn kazakhlangcom.wsgi -b 0.0.0.0:8000
 
